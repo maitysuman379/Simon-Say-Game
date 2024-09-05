@@ -69,5 +69,4 @@ function checkAns(idx){
     else{
         h2.innerText = "game over! press any key to start";
     }
-    // console.log("current level :",level);
 }
