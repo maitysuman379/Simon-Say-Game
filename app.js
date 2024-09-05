@@ -19,6 +19,7 @@ document.addEventListener('keypress',function(){
 });
 
 function levelup(){
+    userSeq = [];
     level++;
     h2.innerText = `Level ${level}`;
 
@@ -67,6 +68,20 @@ function checkAns(idx){
         }
     }
     else{
-        h2.innerText = "game over! press any key to start";
+        let go = `<span style="color:red;">Game Over!</span>`;
+        h2.innerHTML = `${go} your score was  <b>${level}</b> <br> press any key to start`;
+        let body = document.querySelector('body');
+        body.style.backgroundColor = "red";
+        setTimeout(function(){
+            body.style.backgroundColor = "white";
+        },150);
+        reset();
     }
+}
+
+function reset(){
+    started = false;
+    gameSeq = [];
+    userSeq = [];
+    level = 0;
 }
